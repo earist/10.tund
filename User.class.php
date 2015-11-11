@@ -67,7 +67,7 @@ class User {
 	function loginUser($email1, $hash){
 		$response = new StdClass();
 		//kas selline email on juba olemas
-		$stmt = $this->connection->prepare("SELECT id FROM user_sample WHERE email=?");
+		$stmt = $this->connection->prepare("SELECT id FROM users2 WHERE email=?");
 		$stmt->bind_param("s", $email1);
 		$stmt->bind_result($id);
 		$stmt->execute();
